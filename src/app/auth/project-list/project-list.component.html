@@ -27,7 +27,10 @@
         {{ project.description }}
       </div>
       <div class="b-project__created-at">
-        {{ project.created_at | date:'fullDate' }}
+        <strong>Fecha de creación: </strong>{{ project.created_at | date:'fullDate' }}
+      </div>
+      <div class="b-project__updated-at">
+        <strong>Última modificación: </strong>{{ project.updated_at | moment:'relative':'YYYY-MM-DD hh:mm:ss':'es' }}
       </div>
       <div class="b-project__actions">
         <a (click)="onDeleteProject(project)">

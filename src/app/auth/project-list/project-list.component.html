@@ -26,6 +26,9 @@
       <div class="b-project__description">
         {{ project.description }}
       </div>
+      <div class="b-project__created-at">
+        {{ project.created_at | date:'fullDate' }}
+      </div>
       <div class="b-project__actions">
         <a (click)="onDeleteProject(project)">
           <i class="fa fa-trash" aria-hidden="true"></i>

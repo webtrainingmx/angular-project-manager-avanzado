@@ -16,7 +16,7 @@
   </div>
 
   <div class="b-project-list">
-    <h2>Proyectos</h2>
+    <ng-content></ng-content>
     <div class="b-project" *ngFor="let project of projects">
       <div class="b-project__title-container">
         <a routerLink="/proyectos/detalle/{{project.id}}">

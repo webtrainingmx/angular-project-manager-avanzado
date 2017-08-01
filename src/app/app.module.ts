@@ -29,7 +29,7 @@ import {PublicGuard} from './common/guards/public.guard';
 import {routes} from './routes';
 import { ProjectsHomeComponent } from './auth/projects-home/projects-home.component';
 import { ProjectDetailComponent } from './auth/project-detail/project-detail.component';
-import { MomentPipePipe } from './common/pipes/moment-pipe.pipe';
+import { MomentPipe } from './common/pipes/moment-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -47,7 +47,7 @@ import { MomentPipePipe } from './common/pipes/moment-pipe.pipe';
     LoginComponent,
     ProjectsHomeComponent,
     ProjectDetailComponent,
-    MomentPipePipe
+    MomentPipe
   ],
   imports: [
     BrowserModule,

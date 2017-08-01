@@ -4,7 +4,7 @@ import * as moment from 'moment';
 @Pipe({
   name: 'moment'
 })
-export class MomentPipePipe implements PipeTransform {
+export class MomentPipe implements PipeTransform {
 
   // Read more about moment.js in https://momentjs.com/
   transform(value: any,

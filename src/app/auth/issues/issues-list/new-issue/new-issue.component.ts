@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpService} from '../../../common/services/http.service';
+import {HttpService} from '../../../../common/services/http.service';
 import {Issue} from '../models/issue.model';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 

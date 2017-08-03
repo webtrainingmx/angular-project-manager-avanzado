@@ -5,30 +5,32 @@ import {HttpModule} from '@angular/http';
 import {RouterModule} from '@angular/router';
 import {Ng2Webstorage} from 'ngx-webstorage';
 
+import {SharedComponentsModule} from './modules/shared-components/shared-components.module';
+
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './common/layout/header/header.component';
-import {ProjectListComponent} from './auth/project-list/project-list.component';
+import {ProjectListComponent} from './auth/projects/project-list/project-list.component';
 
-import {ProjectListService} from './auth/project-list/services/project-list.service';
+import {ProjectListService} from './auth/projects/project-list/services/project-list.service';
 import {IssuesListService} from './auth/issues-list/services/issues-list.service';
 import {IssuesListComponent} from './auth/issues-list/issues-list.component';
 import {HomeComponent} from './auth/home/home.component';
 import {NotFoundComponent} from './common/not-found/not-found.component';
 import {SortingComponent} from './common/sorting/sorting.component';
 import {GroupingComponent} from './common/grouping/grouping.component';
-import {NewProjectComponent} from './auth/project-list/new-project/new-project.component';
+import {NewProjectComponent} from './auth/projects/project-list/new-project/new-project.component';
 import {NewIssueComponent} from './auth/issues-list/new-issue/new-issue.component';
 import {HttpService} from './common/services/http.service';
 import {JasperoAlertsModule} from '@jaspero/ng2-alerts';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {LoaderComponent} from './common/loader/loader.component';
+// import {LoaderComponent} from './common/loader/loader.component';
 import {AuthGuard} from 'app/common/guards/auth.guard';
 import {AuthenticationService} from './common/services/authentication.service';
 import {LoginComponent} from './public/login/login.component';
 import {PublicGuard} from './common/guards/public.guard';
 import {routes} from './routes';
 import { ProjectsHomeComponent } from './auth/projects-home/projects-home.component';
-import { ProjectDetailComponent } from './auth/project-detail/project-detail.component';
+import { ProjectDetailComponent } from './auth/projects/project-detail/project-detail.component';
 import { MomentPipe } from './common/pipes/moment-pipe.pipe';
 
 @NgModule({
@@ -43,7 +45,7 @@ import { MomentPipe } from './common/pipes/moment-pipe.pipe';
     GroupingComponent,
     NewProjectComponent,
     NewIssueComponent,
-    LoaderComponent,
+    // LoaderComponent,
     LoginComponent,
     ProjectsHomeComponent,
     ProjectDetailComponent,
@@ -57,7 +59,8 @@ import { MomentPipe } from './common/pipes/moment-pipe.pipe';
     HttpModule,
     BrowserAnimationsModule,
     JasperoAlertsModule,
-    Ng2Webstorage
+    Ng2Webstorage,
+    SharedComponentsModule
   ],
   providers: [
     ProjectListService, IssuesListService,

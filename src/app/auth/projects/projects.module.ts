@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { JasperoAlertsModule } from '@jaspero/ng2-alerts';
 import { SharedComponentsModule } from '../../modules/shared-components/shared-components.module';
+import { ProjectsRoutingModule} from './projects-routing.module';
 
 import { ProjectListComponent } from './project-list/project-list.component';
 import { ProjectListService } from './project-list/services/project-list.service';
@@ -20,7 +21,8 @@ import { ProjectsHomeComponent } from './projects-home/projects-home.component';
     RouterModule,
     ReactiveFormsModule,
     JasperoAlertsModule,
-    SharedComponentsModule
+    SharedComponentsModule,
+    ProjectsRoutingModule
   ],
   declarations: [
     NewProjectComponent,

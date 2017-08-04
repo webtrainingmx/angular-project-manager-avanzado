@@ -11,8 +11,8 @@ import { HomeRoutingModule } from './home-routing.module';
   imports: [
     RouterModule,
     CommonModule,
-    HomeRoutingModule,
     ProjectsModule,
+    HomeRoutingModule,
     IssuesModule,
   ],
   declarations: [ HomeComponent ]

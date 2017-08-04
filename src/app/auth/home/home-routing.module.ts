@@ -3,9 +3,18 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home.component';
 
+import { AuthGuard } from 'app/common/guards/auth.guard';
+
 const routes: Routes = [
   {
-    path: '', component: HomeComponent, pathMatch: 'prefix'
+    path: 'home', component: HomeComponent, pathMatch: 'full',
+  }, {
+    path: 'proyectos', loadChildren: './auth/projects/projects.module#ProjectsModule',
+    data: { name: 'Proyectos' }, canActivate: [ AuthGuard ]
+  },
+  {
+    path: 'issues', loadChildren: './auth/issues/issues.module#IssuesModule',
+    data: { name: 'Issues' }, canActivate: [ AuthGuard ]
   }
 ];
 
@@ -14,9 +23,7 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild( routes )
   ],
-  exports: [
-    RouterModule
-  ],
+  exports: [],
   declarations: []
 } )
 export class HomeRoutingModule {}

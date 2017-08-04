@@ -15,16 +15,8 @@ export const routes: Routes = [
     pathMatch: 'full', canActivate: [ PublicGuard ]
   },
   {
-    path: 'home', loadChildren: './auth/home/home.module#HomeModule',
+    path: 'auth', loadChildren: './auth/home/home.module#HomeModule',
     data: { name: 'Home' }, canActivate: [ AuthGuard ]
-  },
-  {
-    path: 'proyectos', loadChildren: './auth/projects/projects.module#ProjectsModule',
-    data: { name: 'Proyectos' }, canActivate: [ AuthGuard ]
-  },
-  {
-    path: 'issues', loadChildren: './auth/issues/issues.module#IssuesModule',
-    data: { name: 'Issues' }, canActivate: [ AuthGuard ]
   },
   {
     path: '**', component: NotFoundComponent

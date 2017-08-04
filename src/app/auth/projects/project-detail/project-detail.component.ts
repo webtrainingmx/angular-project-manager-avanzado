@@ -18,7 +18,7 @@ export class ProjectDetailComponent implements OnInit {
     this._activatedRoute.params.subscribe( params => {
       const id: number = params[ 'id' ];
       this._projectListService.getSingle(id).subscribe(
-        (data) => {
+        (data: Project) => {
           this.project = data;
         },
         err => {

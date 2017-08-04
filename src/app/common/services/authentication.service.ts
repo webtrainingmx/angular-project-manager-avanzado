@@ -8,7 +8,7 @@ import {Config} from '../config';
 @Injectable()
 export class AuthenticationService {
   hasSession = false;
-  user;
+  user: Object;
   apiBaseURL: string = Config.API_SERVER_URL;
 
   constructor(public _http: HttpService, public _locker: SessionStorageService) {

@@ -12,14 +12,14 @@ export class ProjectListService extends HttpService {
     super(_http);
   }
 
-  public getAll(): Observable<Array<Project>> {
+  public getAll(): Observable<Object> {
     const projects: Array<Project> = [];
     const url = `${this.apiBaseURL}/projects`;
 
     return this.get(url, this._authService.user.api_token);
   }
 
-  public getSingle(id: number): Observable<Project> {
+  public getSingle(id: number): Observable<Object> {
     const url = `${this.apiBaseURL}/projects/${id}`;
     return this.get(url, this._authService.user.api_token);
   }

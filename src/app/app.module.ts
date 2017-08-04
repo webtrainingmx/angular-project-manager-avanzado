@@ -9,6 +9,7 @@ import { SharedComponentsModule } from './modules/shared-components/shared-compo
 import { ProjectsModule } from './auth/projects/projects.module';
 import { IssuesModule } from './auth/issues/issues.module';
 import { LoginModule } from './public/login/login.module';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 // import { HeaderComponent } from './modules/shared-components/layout/header/header.component';
@@ -28,7 +29,7 @@ import { AuthGuard } from 'app/common/guards/auth.guard';
 import { AuthenticationService } from './common/services/authentication.service';
 // import { LoginComponent } from './public/login/login.component';
 import { PublicGuard } from './common/guards/public.guard';
-import { routes } from './routes';
+// import { routes } from './routes';
 // import { ProjectsHomeComponent } from './auth/projects/projects-home/projects-home.component';
 
 // import { MomentPipe } from './modules/shared-components/pipes/moment-pipe.pipe';
@@ -55,7 +56,7 @@ import { routes } from './routes';
     BrowserModule,
     // FormsModule,
     // ReactiveFormsModule,
-    RouterModule.forRoot( routes ),
+    // RouterModule.forRoot( routes ),
     HttpModule,
     BrowserAnimationsModule,
     // JasperoAlertsModule,
@@ -63,7 +64,9 @@ import { routes } from './routes';
     SharedComponentsModule,
     ProjectsModule,
     IssuesModule,
-    LoginModule
+    LoginModule,
+    AppRoutingModule,
+    RouterModule
   ],
   providers: [
     // ProjectListService,

@@ -1,6 +1,8 @@
-import { Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from 'app/common/guards/auth.guard';
-import { LoginComponent } from './public/login/login.component';
+// import { LoginComponent } from './public/login/login.component';
 import { HomeComponent } from './auth/home/home.component';
 import { ProjectsHomeComponent } from './auth/projects/projects-home/projects-home.component';
 import { ProjectListComponent } from './auth/projects/project-list/project-list.component';
@@ -16,7 +18,8 @@ export const routes: Routes = [
     path: '', pathMatch: 'full', redirectTo: '/login'
   },
   {
-    path: 'login', component: LoginComponent, pathMatch: 'full', canActivate: [ PublicGuard ]
+    // path: 'login', component: LoginComponent, pathMatch: 'full', canActivate: [ PublicGuard ]
+    path: 'login', loadChildren: './public/login/login.module#LoginModule', pathMatch: 'full', canActivate: [ PublicGuard ]
   },
   {
     path: 'home', component: HomeComponent, data: { name: 'Home' }, canActivate: [ AuthGuard ]
@@ -27,7 +30,7 @@ export const routes: Routes = [
     children: [
       { path: '', component: ProjectListComponent,  pathMatch: 'full' },
       { path: 'detalle/:id', component: ProjectDetailComponent },
-      ]
+    ]
   },
   {
     path: 'issues', component: IssuesListComponent, data: { name: 'Issues' }, canActivate: [ AuthGuard ]
@@ -46,3 +49,13 @@ export const routes: Routes = [
     path: '**', component: NotFoundComponent
   }
 ];
+
+@NgModule({
+  imports: [
+    CommonModule,
+    RouterModule,
+    RouterModule.forRoot( routes ),
+  ],
+  declarations: []
+})
+export class AppRoutingModule { }

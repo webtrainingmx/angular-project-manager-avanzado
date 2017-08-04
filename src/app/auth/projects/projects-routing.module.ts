@@ -6,23 +6,18 @@ import { ProjectDetailComponent } from './project-detail/project-detail.componen
 import { NewProjectComponent } from './project-list/new-project/new-project.component';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [ {
-  path: '',
-  component: ProjectsHomeComponent,
-  pathMatch: 'prefix',
-  children: [
-    { path: '', component: ProjectListComponent, pathMatch: 'full' },
-    { path: 'detalle/:id', component: ProjectDetailComponent },
-    { path: 'nuevo', component: NewProjectComponent }
-  ]
-} ];
+const routes: Routes = [
+  { path: '', component: ProjectListComponent },
+  { path: 'detalle/:id', component: ProjectDetailComponent },
+  { path: 'nuevo', component: NewProjectComponent }
+  ];
 
 @NgModule( {
   imports: [
     CommonModule,
     RouterModule.forChild( routes )
   ],
-  exports: [ RouterModule ],
+  exports: [],
   declarations: []
 } )
 

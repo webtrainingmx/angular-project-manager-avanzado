@@ -7,21 +7,17 @@ import { NewIssueComponent } from './issues-list/new-issue/new-issue.component';
 const routes: Routes = [
   {
     path: '',
-    component: IssuesListComponent,
-    pathMatch: 'prefix',
-    children: [
-      { path: 'nuevo', component: NewIssueComponent }
-    ]
-  } ];
+    component: IssuesListComponent
+  },
+  { path: 'nuevo', component: NewIssueComponent }
+];
 
 @NgModule( {
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild( routes )
   ],
-  exports: [
-    RouterModule
-  ],
+  exports: [],
   declarations: []
 } )
 export class IssuesRoutingModule {}

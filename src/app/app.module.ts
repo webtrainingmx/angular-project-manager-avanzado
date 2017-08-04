@@ -4,8 +4,8 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { Ng2Webstorage } from 'ngx-webstorage';
 
-import { SharedComponentsModule } from './modules/shared-components/shared-components.module';
-import { LoginModule } from './public/login/login.module';
+import { NotFoundModule } from './modules/not-found/not-found.module';
+import { HeaderModule } from './modules/layout/header/header.module';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -26,8 +26,8 @@ import { PublicGuard } from './common/guards/public.guard';
     HttpModule,
     BrowserAnimationsModule,
     Ng2Webstorage,
-    SharedComponentsModule,
-    LoginModule,
+    HeaderModule,
+    NotFoundModule,
     RouterModule,
     AppRoutingModule,
   ],

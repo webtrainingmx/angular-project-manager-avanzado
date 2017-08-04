@@ -9,11 +9,11 @@ import { HomeRoutingModule } from './home-routing.module';
 
 @NgModule( {
   imports: [
-    CommonModule,
     RouterModule,
+    CommonModule,
+    HomeRoutingModule,
     ProjectsModule,
     IssuesModule,
-    HomeRoutingModule
   ],
   declarations: [ HomeComponent ]
 } )

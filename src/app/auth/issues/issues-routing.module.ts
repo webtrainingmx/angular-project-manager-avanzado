@@ -8,6 +8,7 @@ const routes: Routes = [
   {
     path: '',
     component: IssuesListComponent,
+    pathMatch: 'prefix',
     children: [
       { path: 'nuevo', component: NewIssueComponent }
     ]
@@ -17,6 +18,9 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes)
+  ],
+  exports: [
+    RouterModule
   ],
   declarations: []
 } )

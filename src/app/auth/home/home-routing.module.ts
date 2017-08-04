@@ -5,8 +5,7 @@ import { HomeComponent } from './home.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: HomeComponent
+    path: '', component: HomeComponent, pathMatch: 'prefix'
   }
 ];
 
@@ -14,6 +13,9 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild( routes )
+  ],
+  exports: [
+    RouterModule
   ],
   declarations: []
 } )

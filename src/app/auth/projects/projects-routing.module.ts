@@ -9,6 +9,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [ {
   path: '',
   component: ProjectsHomeComponent,
+  pathMatch: 'prefix',
   children: [
     { path: '', component: ProjectListComponent, pathMatch: 'full' },
     { path: 'detalle/:id', component: ProjectDetailComponent },

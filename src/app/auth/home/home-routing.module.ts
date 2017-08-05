@@ -3,17 +3,17 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home.component';
 
-import { AuthGuard } from 'app/common/guards/auth.guard';
+import { AuthGuard } from '../../common/guards/auth.guard';
 
 const routes: Routes = [
   {
     path: 'home', component: HomeComponent, pathMatch: 'full',
   }, {
-    path: 'proyectos', loadChildren: './auth/projects/projects.module#ProjectsModule',
+    path: 'proyectos', loadChildren: './../projects/projects.module#ProjectsModule',
     data: { name: 'Proyectos' }, canActivate: [ AuthGuard ]
   },
   {
-    path: 'issues', loadChildren: './auth/issues/issues.module#IssuesModule',
+    path: 'issues', loadChildren: './../issues/issues.module#IssuesModule',
     data: { name: 'Issues' }, canActivate: [ AuthGuard ]
   }
 ];

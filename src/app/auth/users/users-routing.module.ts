@@ -14,6 +14,6 @@ const routes: Routes = [ {
     CommonModule,
     RouterModule.forChild( routes )
   ],
-  declarations: [ NewUserComponent ]
+  declarations: []
 } )
 export class UsersRoutingModule {}

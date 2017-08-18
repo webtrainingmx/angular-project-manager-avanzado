@@ -1,3 +1,15 @@
-<p>
-  new-user works!
-</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-group" formGroupName="user">
+    <input type="text" formControlName="username">
+    <input type="password" formControlName="password">
+  </div>
+  <div class="form-group">
+    <button
+      type="submit" class="btn btn-primary" [disabled]="form.invalid">Guardar
+    </button>
+
+    <pre>
+      {{ form.value | json }}
+    </pre>
+  </div>
+</form>

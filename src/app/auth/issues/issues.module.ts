@@ -6,6 +6,7 @@ import { IssuesListComponent } from './issues-list/issues-list.component';
 import { IssuesListService } from './issues-list/services/issues-list.service';
 import { NewIssueComponent } from './issues-list/new-issue/new-issue.component';
 import { IssuesRoutingModule } from './issues-routing.module';
+import { SharedComponentsModule } from '../../modules/shared-components/shared-components.module';
 
 @NgModule( {
   imports: [
@@ -13,7 +14,8 @@ import { IssuesRoutingModule } from './issues-routing.module';
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    IssuesRoutingModule
+    IssuesRoutingModule,
+    SharedComponentsModule
   ],
   declarations: [ IssuesListComponent, NewIssueComponent ],
   exports: [ IssuesListComponent ],

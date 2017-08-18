@@ -15,7 +15,15 @@
         {{ issue.status }}
       </span>
     </div>
+    <div class="well margin-top-sm">
+      <app-issues-button-reasign></app-issues-button-reasign>
+      <app-issues-button-close></app-issues-button-close>
+      <app-issues-button-watch></app-issues-button-watch>
+    </div>
   </div>
+
+
+
   <h2>Issues (ng-template)</h2>
   <ng-template ngFor [ngForOf]="issues" let-issue let-index="index">
     <div class="b-issue__title-container">

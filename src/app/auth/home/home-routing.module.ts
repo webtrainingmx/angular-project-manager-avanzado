@@ -11,6 +11,9 @@ const routes: Routes = [
   }, {
     path: 'proyectos', loadChildren: './../projects/projects.module#ProjectsModule',
     data: { name: 'Proyectos' }, canActivate: [ AuthGuard ]
+  }, {
+    path: 'usuarios', loadChildren: './../users/users.module#UsersModule',
+    data: { name: 'Usuarios' }, canActivate: [ AuthGuard ]
   },
   {
     path: 'issues', loadChildren: './../issues/issues.module#IssuesModule',

@@ -10,8 +10,10 @@ export class NewUserComponent implements OnInit {
 
   form = new FormGroup( {
     user: new FormGroup( {
-      username: new FormControl('luis-rodriguez'),
-      password: new FormControl('pass')
+      name: new FormControl( '' ),
+      email: new FormControl( '' ),
+      username: new FormControl( '' ),
+      password: new FormControl( '' )
     } )
   } );
 
@@ -21,7 +23,7 @@ export class NewUserComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('Submit', this.form.value);
+    console.log( 'Submit', this.form.value );
   }
 
 }

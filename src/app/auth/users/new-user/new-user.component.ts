@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { NewUserValidators } from './new-user.validators';
 
 @Component( {
   selector: 'app-new-user',
@@ -13,7 +14,7 @@ export class NewUserComponent implements OnInit {
       name: [ '', Validators.required ],
       email: [ '', [ Validators.email, Validators.required ] ],
       username: [ '', Validators.required ],
-      password: [ '', Validators.required ]
+      password: [ '', [ Validators.required, NewUserValidators.checkPassword ] ]
     } )
   } );
 
@@ -29,5 +30,23 @@ export class NewUserComponent implements OnInit {
   isRequired( fieldName: string ): boolean {
     return this.form.get( `user.${fieldName}` ).hasError( 'required' )
       && this.form.get( `user.${fieldName}` ).touched;
+  }
+
+  isInvalidPassword() {
+    const field = 'user.password';
+    return (
+      this.form.get( field ).hasError( 'invalidPassword' ) &&
+      // The user has actually interacted with the field
+      this.form.get( field ).dirty &&
+      // The user has actually typed
+      ! this.isRequired( 'password' )
+    );
+  }
+
+  isInvalidEmail() {
+    const field = 'user.email';
+    return (
+      this.form.get( field ).hasError( 'email' )
+    );
   }
 }

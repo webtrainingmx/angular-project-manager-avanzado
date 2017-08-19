@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component( {
   selector: 'app-new-user',
@@ -8,16 +8,16 @@ import { FormGroup, FormControl } from '@angular/forms';
 } )
 export class NewUserComponent implements OnInit {
 
-  form = new FormGroup( {
-    user: new FormGroup( {
-      name: new FormControl( '' ),
-      email: new FormControl( '' ),
-      username: new FormControl( '' ),
-      password: new FormControl( '' )
+  form = this._formBuilder.group( {
+    user: this._formBuilder.group( {
+      name: [ '', Validators.required ],
+      email: [ '', Validators.email ],
+      username: [ '', Validators.required ],
+      password: [ '', Validators.required ]
     } )
   } );
 
-  constructor() { }
+  constructor( private _formBuilder: FormBuilder ) { }
 
   ngOnInit() {
   }

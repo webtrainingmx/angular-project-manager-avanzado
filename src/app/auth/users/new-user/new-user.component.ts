@@ -11,7 +11,7 @@ export class NewUserComponent implements OnInit {
   form = this._formBuilder.group( {
     user: this._formBuilder.group( {
       name: [ '', Validators.required ],
-      email: [ '', Validators.email ],
+      email: [ '', [ Validators.email, Validators.required ] ],
       username: [ '', Validators.required ],
       password: [ '', Validators.required ]
     } )
@@ -26,4 +26,8 @@ export class NewUserComponent implements OnInit {
     console.log( 'Submit', this.form.value );
   }
 
+  isRequired( fieldName: string ): boolean {
+    return this.form.get( `user.${fieldName}` ).hasError( 'required' )
+      && this.form.get( `user.${fieldName}` ).touched;
+  }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { NewUserValidators } from './new-user.validators';
+import { NewUserListService } from './new-user.service';
 
 @Component( {
   selector: 'app-new-user',
@@ -18,13 +19,21 @@ export class NewUserComponent implements OnInit {
     } )
   } );
 
-  constructor( private _formBuilder: FormBuilder ) { }
+  constructor( private _formBuilder: FormBuilder, private _newUserService: NewUserListService ) { }
 
   ngOnInit() {
   }
 
   onSubmit() {
-    console.log( 'Submit', this.form.value );
+    const user = this.form.value.user;
+    console.log( 'Submit', user );
+    this._newUserService.createUser( user ).subscribe( ( response ) => {
+        console.log( response );
+      },
+      ( err ) => {
+        console.error( err );
+      }
+    );
   }
 
   isRequired( fieldName: string ): boolean {
